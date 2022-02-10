@@ -3,8 +3,8 @@ import { navigation } from "../navigator/aa-index";
 import classes from "./layout.module.css";
 import { NavLink } from "react-router-dom";
 
-const MainSidebar = (props) => {
-  const { isSide, setIsSide, isMobile = false } = props;
+const MobileSidebar = (props) => {
+  const { isSide, setIsSide } = props;
 
   const [isShowIndex, setIsShowIndex] = useState(-1);
 
@@ -19,15 +19,16 @@ const MainSidebar = (props) => {
 
   return (
     <Fragment>
-      <div className={classes.main_slider}>
-        {isMobile && (
-          <h3
-            style={{ cursor: "pointer", width: "20px" }}
-            onClick={() => setIsSide(!isSide)}
-          >
-            X
-          </h3>
-        )}
+      <div className={classes.mob_slider}>
+        <div className={classes.backdrop}></div>
+
+        <h3
+          style={{ cursor: "pointer", width: "20px" }}
+          onClick={() => setIsSide(!isSide)}
+        >
+          X
+        </h3>
+
         {navigation.map(({ main, sub = [] }, index) => (
           <div key={index}>
             <p
@@ -61,4 +62,4 @@ const MainSidebar = (props) => {
   );
 };
 
-export default MainSidebar;
+export default MobileSidebar;
