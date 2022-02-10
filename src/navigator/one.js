@@ -1,8 +1,8 @@
 export const oneNavi = {
-    main: "First",
+    main: "Dummy 1",
     sub: [
-      { name: "First", path: "/first" },
-      { name: "Second", path: "/second" },
+      { name: "Game", path: "/" },
+      { name: "Spec Game", path: "dummy1-game" },
     ],
   }
 

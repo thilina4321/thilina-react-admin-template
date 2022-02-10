@@ -1,22 +1,22 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
-import First from "./pages/one/First";
 import { routes } from "./router/aa-index";
 import { mainRouter } from "./router/main-pages";
 
-const App = () => {
+const MainRoutes = () => {
   return (
-    <div>
-      <BrowserRouter>
-          <Routes>
-            {mainRouter.map(({ path, element }, ind) => (
-              <Route key={ind} path={path} element={element} />
-            ))}
-          </Routes>
-      </BrowserRouter>
-    </div>
+    <Layout>
+      <Routes>
+        {mainRouter.map(({ path, element }, ind) => (
+          <Route key={ind} path={path} element={element} />
+        ))}
+        {routes.map(({ path, element }, ind) => (
+          <Route key={ind} path={path} element={element} />
+        ))}
+      </Routes>
+    </Layout>
   );
 };
 
-export default App;
+export default MainRoutes;

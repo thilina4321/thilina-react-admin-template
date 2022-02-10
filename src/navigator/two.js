@@ -1,7 +1,7 @@
 export const secNavi =  {
-    main: "Second",
+    main: "Dummy 2",
     sub: [
-      { name: "S-First", path: "/s-first" },
-      { name: "S-Second", path: "s-second" },
+      { name: "Hello", path: "/dummy2" },
+      { name: "Spec Hello", path: "/dummy2-game" },
     ],
   }

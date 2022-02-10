@@ -1,7 +1,8 @@
-import SFirst from "../pages/two/SFirst";
-import SSecond from "../pages/two/SSecond";
+import Dummy1 from "../views/dummy2/Dummy1";
+import Dummy2 from "../views/dummy2/Dummy2";
+
 
 export const secondRouter = [
-  { path: "/s-first", element: <SFirst /> },
-  { path: "/s-second", element: <SSecond /> },
+  { path: "/dummy2", element: <Dummy1 /> },
+  { path: "/dummy2-game", element: <Dummy2 /> },
 ];

@@ -1,7 +1,8 @@
-import First from "../pages/one/First";
-import Second from "../pages/one/Second";
+import First from "../views/dummy/First";
+import Second from "../views/dummy/Second";
+
 
 export const oneRouter = [
-  { path: "/first", element: <First /> },
-  { path: "/second", element: <Second /> },
+  { path: "/", element: <First /> },
+  { path: "dummy1-game", element: <Second /> },
 ];

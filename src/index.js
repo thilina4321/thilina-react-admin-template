@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import ErrorDialog from "./components/ErrorDialog";
 import LoadingSpinner from "./components/LoadingSpinner";
+import { BrowserRouter } from "react-router-dom";
 
 const GlobalLoadingSpinner = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -46,9 +47,11 @@ const GlobalErrorDialogBox = () => {
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <GlobalLoadingSpinner />
-      <GlobalErrorDialogBox />
-      <App />
+      <BrowserRouter>
+        <GlobalLoadingSpinner />
+        <GlobalErrorDialogBox />
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
