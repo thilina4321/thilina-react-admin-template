@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./mainbar.module.css";
+import classes from "./layout.module.css";
 
 const Mainbar = ({ setIsSide, isSide }) => {
   return (

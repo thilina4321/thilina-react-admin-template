@@ -90,21 +90,25 @@
   width: 80%;
 }
 
-.mob_slider{
+.mobile_slider{
   z-index: 4;
   width: 80%;
   background-color: rgb(49, 0, 128);
   color: rgb(137, 139, 233);
-  border: 1px solid rgb(0, 255, 64);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-/* .backdrop {
-  z-index: 2;
+.backdrop {
+  z-index: 0;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-} */
+  background-color: rgba(0, 0, 0, 0.3);
+}
 
 .icon {
   display: none;
@@ -117,5 +121,31 @@
 .child {
   background-color: black;
   min-height: 100vh;
-  /* height: fit-content; */
+}
+
+
+
+ /* brand component */
+
+ .mainbar {
+  height: 2rem;
+  background-color: green;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (min-width:950px) {
+    .btn{
+        display: none;
+    }
 }
