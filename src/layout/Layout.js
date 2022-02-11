@@ -6,6 +6,7 @@ import MainSidebar from "./MainSidebar";
 
 const Layout = (props) => {
   const [isSide, setIsSide] = useState(false);
+  const [lightTheme, setLightTheme] = useState(true);
   const location = useLocation();
 
   const names = ["/login", "/signup"];
@@ -21,12 +22,19 @@ const Layout = (props) => {
       available for this */}
       {!isMain && (
         <Fragment>
-          <Mainbar isSide={isSide} setIsSide={setIsSide} />
+          <Mainbar
+            lightTheme={lightTheme}
+            setLightTheme={setLightTheme}
+            isSide={isSide}
+            setIsSide={setIsSide}
+          />
           {isSide && (
             <Fragment>
               <div onClick={removeSlider} className={classes.backdrop}></div>
               <div className={classes.mobile_slider}>
                 <MainSidebar
+                  lightTheme={lightTheme}
+                  setLightTheme={setLightTheme}
                   isSide={isSide}
                   setIsSide={setIsSide}
                   isMobile={true}
@@ -43,7 +51,12 @@ const Layout = (props) => {
         {!isMain && (
           <Fragment>
             <div className={classes.side}>
-              <MainSidebar isSide={isSide} setIsSide={setIsSide} />
+              <MainSidebar
+                lightTheme={lightTheme}
+                setLightTheme={setLightTheme}
+                isSide={isSide}
+                setIsSide={setIsSide}
+              />
             </div>
           </Fragment>
         )}

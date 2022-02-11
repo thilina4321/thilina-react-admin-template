@@ -4,7 +4,12 @@ import classes from "./layout.module.css";
 import { NavLink } from "react-router-dom";
 
 const MainSidebar = (props) => {
-  const { isSide, setIsSide, isMobile = false } = props;
+  const {
+    isSide,
+    setIsSide,
+    isMobile = false,
+    lightTheme,
+  } = props;
 
   const [isShowIndex, setIsShowIndex] = useState(-1);
 
@@ -19,7 +24,9 @@ const MainSidebar = (props) => {
 
   return (
     <Fragment>
-      <div className={classes.main_slider}>
+      <div
+        className={lightTheme ? classes.main_slider : classes.dark_main_slider}
+      >
         {isMobile && (
           <h3
             style={{ cursor: "pointer", width: "20px" }}

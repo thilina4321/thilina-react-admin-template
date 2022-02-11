@@ -1,5 +1,5 @@
-import First from "../views/dummy/First";
-import Second from "../views/dummy/Second";
+import First from "../views/file-upload/FileUpload";
+import Second from "../views/file-upload/DragAndDrop";
 
 
 export const oneRouter = [

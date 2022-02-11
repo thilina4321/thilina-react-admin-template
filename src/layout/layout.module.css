@@ -1,8 +1,25 @@
+:root {
+  /* --sidebar-bg-color:rgb(62, 62, 153); */
+  --dark-sidebar-bg-color: #0b1929;
+  --sidebar-bg-color: rgb(49, 0, 128);
+  --dark-sidebar-color: white;
+  --sidebar--color: black;
+
+  --item-bg-color: rgba(0, 0, 0, 0.5);
+  --item-hover-bg-color: rgba(0, 0, 0, 0.2);
+
+  --border-color: white;
+  --brand-bg-color: #0b1929;
+
+  --brand-color: rgba(255, 255, 255, 0.705);
+}
+
 .main_layout {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  border: 1px solid var(--border-color);
 }
 
 .side {
@@ -12,11 +29,16 @@
 .content {
   flex: 0.75;
   min-height: 100vh;
+  border: 1px solid var(--border-color);
+  background-color: var(--sidebar-bg-color);
+  color: var(--border-color);
+  padding: 0.5rem;
 }
 
 .content_main {
   width: 100%;
   min-height: 100vh;
+  border: 1px solid var(--border-color);
 }
 
 @media (max-width: 950px) {
@@ -34,8 +56,16 @@
 }
 
 .main_slider {
-  background-color: rgb(62, 62, 153);
-  color: white;
+  background-color: var(--sidebar-bg-color);
+  color: var(--sidebar--color);
+  padding: 0.5rem;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.dart_main_slider {
+  background-color: var(--dark-sidebar-bg-color);
+  color: var(--dark-sidebar-color);
   padding: 0.5rem;
   min-height: 100vh;
   height: 100%;
@@ -43,21 +73,41 @@
 
 .sub_name {
   background-color: rgb(117, 103, 240);
+  background-color: brown;
   padding: 0.2rem 0.8rem;
   margin-left: 1rem;
   border-radius: 5px;
+  border: 1px solid rgb(234, 243, 234);
+}
+
+.dark_sub_name {
+  background-color: rgb(117, 103, 240);
+  background-color: var(--item-bg-color);
+  padding: 0.2rem 0.8rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgb(234, 243, 234);
 }
 
 .sub_name:hover {
   background-color: rgb(49, 0, 128);
+  background-color: var(--item-hover-bg-color);
+  color: rgb(137, 139, 233);
+  border: 1px solid rgb(0, 255, 64);
+}
+
+.dark_sub_name:hover {
+  background-color: rgb(49, 0, 128);
+  background-color: green;
   color: rgb(137, 139, 233);
   border: 1px solid rgb(0, 255, 64);
 }
 
 .active {
-  color: rgb(233, 247, 236);
+  color: rgba(248, 192, 6, 0.822);
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .inactive {
@@ -74,15 +124,39 @@
 .main_element {
   cursor: pointer;
   background-color: rgb(137, 139, 233);
+  background-color: yellow;
   border-radius: 5px;
   padding: 5px;
+  border: 1px solid rgb(234, 243, 234);
+  text-align: center;
+}
+
+.dark_main_element {
+  cursor: pointer;
+  background-color: rgb(137, 139, 233);
+  background-color: var(--item-bg-color);
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgb(234, 243, 234);
   text-align: center;
 }
 
 .main_element:hover {
-  background-color: rgb(49, 0, 128);
+  background-color: yellow;
+  background-color: var(--item-hover-bg-color);
   color: rgb(137, 139, 233);
   border: 1px solid rgb(0, 255, 64);
+
+  /* border: 1px solid rgb(0, 255, 64); */
+}
+
+.dark_main_element:hover {
+  background-color: rgb(49, 0, 128);
+  background-color: var(--item-hover-bg-color);
+  color: rgb(137, 139, 233);
+  border: 1px solid rgb(0, 255, 64);
+
+  /* border: 1px solid rgb(0, 255, 64); */
 }
 
 .mobile_sidebar {
@@ -90,7 +164,7 @@
   width: 80%;
 }
 
-.mobile_slider{
+.mobile_slider {
   z-index: 4;
   width: 80%;
   background-color: rgb(49, 0, 128);
@@ -123,29 +197,42 @@
   min-height: 100vh;
 }
 
+/* brand component */
 
-
- /* brand component */
-
- .mainbar {
+.mainbar {
   height: 2rem;
-  background-color: green;
+  background-color: var(--brand-bg-color);
+  color: var(--brand-color);
   padding: 10px;
   margin: 0;
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
+  align-items: center;
 }
 
-.p{
-    display: flex;
+.dart_mainbar {
+  height: 2rem;
+  background-color: var(--brand-bg-color);
+  background-color: yellow;
+  color: var(--brand-color);
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.p {
+  /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+  flex: 1;
 }
 
-
-@media (min-width:950px) {
-    .btn{
-        display: none;
-    }
+@media (min-width: 950px) {
+  .btn {
+    display: none;
+  }
 }
