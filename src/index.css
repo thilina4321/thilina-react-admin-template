@@ -1,3 +1,18 @@
+:root {
+  --dark-sidebar-bg-color: #0b1929;
+  --sidebar-bg-color: rgb(49, 0, 128);
+  --dark-sidebar-color: white;
+  --sidebar--color: black;
+
+  --item-bg-color: rgba(0, 0, 0, 0.5);
+  --item-hover-bg-color: rgba(0, 0, 0, 0.2);
+
+  --border-color: white;
+  --brand-bg-color: #0b1929;
+
+  --brand-color: rgba(255, 255, 255, 0.705);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

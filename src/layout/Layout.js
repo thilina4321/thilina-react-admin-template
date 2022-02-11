@@ -34,7 +34,6 @@ const Layout = (props) => {
               <div className={classes.mobile_slider}>
                 <MainSidebar
                   lightTheme={lightTheme}
-                  setLightTheme={setLightTheme}
                   isSide={isSide}
                   setIsSide={setIsSide}
                   isMobile={true}
@@ -53,7 +52,6 @@ const Layout = (props) => {
             <div className={classes.side}>
               <MainSidebar
                 lightTheme={lightTheme}
-                setLightTheme={setLightTheme}
                 isSide={isSide}
                 setIsSide={setIsSide}
               />
