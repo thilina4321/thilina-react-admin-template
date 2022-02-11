@@ -1,17 +1,19 @@
 import React from "react";
 
-import { CCard, CCardBody, CCardText, CCardTitle } from "@coreui/react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardHeader from "@mui/material/CardHeader";
 
 const CardComponent = (props) => {
   const { question, answer } = props;
 
   return (
-    <CCard style={{ height: "8rem", overflow:'hidden' }}>
-      <CCardBody>
-        <CCardTitle>{question}</CCardTitle>
-        <CCardText>{answer}</CCardText>
-      </CCardBody>
-    </CCard>
+    <Card style={{ height: "8rem", overflow:'hidden' }}>
+      <CardContent>
+        <CardHeader>{question}</CardHeader>
+        <CardHeader>{answer}</CardHeader>
+      </CardContent>
+    </Card>
   );
 };
 
