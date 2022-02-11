@@ -1,10 +1,11 @@
 import React from "react";
-import { CAlert, CCard } from "@coreui/react";
+import Alert from "@mui/material/Alert";
+import Card from "@mui/material/Card";
 
 const AlertComponent = () => {
   return (
-    <CCard className="mb-4">
-      <CAlert
+    <Card className="mb-4">
+      <Alert
         color="warning"
         dismissible
         onClose={() => {
@@ -13,8 +14,8 @@ const AlertComponent = () => {
       >
         <strong>Go right ahead</strong> and click that dimiss over there on the
         right.
-      </CAlert>
-    </CCard>
+      </Alert>
+    </Card>
   );
 };
 

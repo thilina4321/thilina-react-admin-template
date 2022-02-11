@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./layout_light.module.css";
 import darkclasses from "./layout_dark.module.css";
+import Switch from "@mui/material/Switch";
 
 const Mainbar = ({ setIsSide, isSide, lightTheme, setLightTheme }) => {
   return (
@@ -9,9 +10,8 @@ const Mainbar = ({ setIsSide, isSide, lightTheme, setLightTheme }) => {
         Click
       </button>
       <p className={classes.p}> Main Brand </p>
-      <p onClick={() => setLightTheme(!lightTheme)}>
-        {!lightTheme ? "Light" : "Dark"}
-      </p>
+
+      <Switch checked={lightTheme} onClick={() => setLightTheme(!lightTheme)} />
       <p> Logout </p>
     </div>
   );

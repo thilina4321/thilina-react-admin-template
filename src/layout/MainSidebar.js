@@ -27,7 +27,12 @@ const MainSidebar = (props) => {
       >
         {isMobile && (
           <h3
-            style={{ cursor: "pointer", width: "20px" }}
+            style={{
+              cursor: "pointer",
+              width: "20px",
+              fontWeight: "bold",
+              color: lightTheme && "white",
+            }}
             onClick={() => setIsSide(!isSide)}
           >
             X
@@ -52,7 +57,7 @@ const MainSidebar = (props) => {
                 }}
               >
                 <div> {<main.icon sx={{ fontSize: 40 }} />}</div>
-                <div style={{fontWeight:'bold'}}> {main.name}</div>
+                <div style={{ fontWeight: "bold" }}> {main.name}</div>
               </div>
             </div>
             {index === isShowIndex &&
@@ -73,7 +78,6 @@ const MainSidebar = (props) => {
                           : darkclasses.dark_sub_name
                       }
                     >
-                      <span className={classes.icon}> @ </span>
                       <span> {name} </span>
                     </p>
                   </NavLink>

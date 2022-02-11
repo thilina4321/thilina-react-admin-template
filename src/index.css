@@ -1,12 +1,12 @@
 :root {
-  --bg-color: white;
+  --bg-color: #fbf4e2;
   --font-color: #0b1929;
 
   --dark-bg-color: #0b1929;
   --dark-font-color: white;
 
   --dark-sidebar-bg-color: #0b1929;
-  --sidebar-bg-color: rgb(49, 0, 128);
+  --sidebar-bg-color: #00a3d8;
   --dark-sidebar-color: white;
   --sidebar--color: black;
 

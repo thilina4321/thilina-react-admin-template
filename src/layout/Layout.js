@@ -51,7 +51,11 @@ const Layout = (props) => {
         </Fragment>
       )}
 
-      <div className={classes.main_layout}>
+      <div
+        className={
+          lightTheme ? classes.main_layout : darkclasses.dark_main_layout
+        }
+      >
         {/* check is it main page before desktop slider to make
       available for this */}
         {!isMain && (
