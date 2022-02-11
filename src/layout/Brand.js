@@ -1,9 +1,10 @@
 import React from "react";
-import classes from "./layout.module.css";
+import classes from "./layout_light.module.css";
+import darkclasses from "./layout_dark.module.css";
 
 const Mainbar = ({ setIsSide, isSide, lightTheme, setLightTheme }) => {
   return (
-    <div className={classes.mainbar}>
+    <div className={lightTheme ? classes.mainbar : darkclasses.dark_mainbar}>
       <button className={classes.btn} onClick={() => setIsSide(!isSide)}>
         Click
       </button>

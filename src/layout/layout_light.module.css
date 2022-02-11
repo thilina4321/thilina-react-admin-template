@@ -6,6 +6,24 @@
   border: 1px solid var(--border-color);
 }
 
+
+.main_element {
+  cursor: pointer;
+  background-color: rgb(137, 139, 233);
+  background-color: yellow;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgb(234, 243, 234);
+  text-align: center;
+}
+
+.main_element:hover {
+  background-color: yellow;
+  background-color: var(--item-hover-bg-color);
+  color: rgb(137, 139, 233);
+  border: 1px solid rgb(0, 255, 64);
+}
+
 .side {
   flex: 0.25;
 }
@@ -67,22 +85,6 @@
   text-decoration: none;
 }
 
-.main_element {
-  cursor: pointer;
-  background-color: rgb(137, 139, 233);
-  background-color: yellow;
-  border-radius: 5px;
-  padding: 5px;
-  border: 1px solid rgb(234, 243, 234);
-  text-align: center;
-}
-
-.main_element:hover {
-  background-color: yellow;
-  background-color: var(--item-hover-bg-color);
-  color: rgb(137, 139, 233);
-  border: 1px solid rgb(0, 255, 64);
-}
 
 .mobile_sidebar {
   z-index: 4;

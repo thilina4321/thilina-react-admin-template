@@ -1,55 +1,74 @@
-.dart_main_slider {
-  background-color: var(--dark-sidebar-bg-color);
-  color: var(--dark-sidebar-color);
+.dark_main_slider {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-font-color);
   padding: 0.5rem;
   min-height: 100vh;
   height: 100%;
 }
 
-.dark_sub_name {
-  background-color: rgb(117, 103, 240);
-  background-color: var(--item-bg-color);
-  padding: 0.2rem 0.8rem;
-  margin-left: 1rem;
-  border-radius: 5px;
-  border: 1px solid rgb(234, 243, 234);
-}
-
-.dark_sub_name:hover {
-  background-color: rgb(49, 0, 128);
-  background-color: green;
-  color: rgb(137, 139, 233);
-  border: 1px solid rgb(0, 255, 64);
-}
 
 .dark_main_element {
   cursor: pointer;
-  background-color: rgb(137, 139, 233);
-  background-color: var(--item-bg-color);
+  background-color: rgba(255, 255, 255, 0.733);
+  color: black;
   border-radius: 5px;
   padding: 5px;
-  border: 1px solid rgb(234, 243, 234);
+  /* box-shadow: 2px 2px 2px rgb(255, 255, 255); */
   text-align: center;
+  margin: 2px;
 }
 
-
 .dark_main_element:hover {
-  background-color: rgb(49, 0, 128);
-  background-color: var(--item-hover-bg-color);
-  color: rgb(137, 139, 233);
+  background-color: black;
+  color: white;
+  border: 1px solid rgb(0, 255, 64);
+}
+
+.dark_content {
+  flex: 0.75;
+  min-height: 100vh;
+  border: 1px solid var(--border-color);
+  background-color: var(--dark-bg-color);
+  color: var(--dark-font-color);
+  padding: 0.5rem;
+}
+
+.dark_sub_name {
+  background-color: #f4f0ec;
+  color: black;  padding: 0.2rem 0.8rem;
+  margin: 2px;
+  margin-left: 1rem;
+  border-radius: 5px;
+
+}
+
+.dark_sub_name:hover {
+  background-color: black;
+  color: white;
   border: 1px solid rgb(0, 255, 64);
 }
 
 
-.dart_mainbar {
+.dark_mainbar {
   height: 2rem;
-  background-color: var(--brand-bg-color);
-  background-color: yellow;
-  color: var(--brand-color);
+  background-color: var(--dark-bg-color);
+  color: var(--dark-font-color);
   padding: 10px;
   margin: 0;
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
   align-items: center;
+}
+
+/* mobile sidebar */
+
+.dark_mobile_slider {
+  z-index: 4;
+  width: 80%;
+  background-color: var(--dark-mobile-sidebar-bg-color);
+  color: var(--dark-mobile-sidebar-color);
+  position: fixed;
+  top: 0;
+  left: 0;
 }

@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Mainbar from "./Brand";
-import classes from "./layout.module.css";
+import classes from "./layout_light.module.css";
+import darkclasses from "./layout_dark.module.css";
 import MainSidebar from "./MainSidebar";
 
 const Layout = (props) => {
@@ -31,7 +32,13 @@ const Layout = (props) => {
           {isSide && (
             <Fragment>
               <div onClick={removeSlider} className={classes.backdrop}></div>
-              <div className={classes.mobile_slider}>
+              <div
+                className={
+                  lightTheme
+                    ? classes.mobile_slider
+                    : darkclasses.dark_mobile_slider
+                }
+              >
                 <MainSidebar
                   lightTheme={lightTheme}
                   isSide={isSide}
@@ -58,7 +65,15 @@ const Layout = (props) => {
             </div>
           </Fragment>
         )}
-        <div className={isMain ? classes.content_main : classes.content}>
+        <div
+          className={
+            isMain
+              ? classes.content_main
+              : lightTheme
+              ? classes.content
+              : darkclasses.dark_content
+          }
+        >
           <div> {props.children} </div>
         </div>
       </div>

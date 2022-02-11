@@ -1,4 +1,10 @@
 :root {
+  --bg-color: white;
+  --font-color: #0b1929;
+
+  --dark-bg-color: #0b1929;
+  --dark-font-color: white;
+
   --dark-sidebar-bg-color: #0b1929;
   --sidebar-bg-color: rgb(49, 0, 128);
   --dark-sidebar-color: white;
@@ -11,18 +17,21 @@
   --brand-bg-color: #0b1929;
 
   --brand-color: rgba(255, 255, 255, 0.705);
+
+  --dark-mobile-sidebar-bg-color: #0b1929;
+  --dark-mobile-sidebar-color: white;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
