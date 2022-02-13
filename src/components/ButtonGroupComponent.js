@@ -1,13 +1,12 @@
 import React from "react";
-import { CButton } from "@coreui/react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useHttp from "../hooks/useHttp";
 
 const ButtonUpdateGroupComponent = (props) => {
   const { action, backRoute, id, data, updateUrl, deleteUrl } = props;
   const dispatch = useDispatch();
-  const history = useHistory();
+  const history = useNavigate();
 
   const updateRequest = useHttp({
     url: `${updateUrl}/${id}`,
@@ -46,24 +45,24 @@ const ButtonUpdateGroupComponent = (props) => {
         justifyContent: "flex-end",
       }}
     >
-      <CButton
+      <button
         onClick={cancelHandler}
         style={{ backgroundColor: "grey", cursor: "pointer" }}
       >
         Cancel
-      </CButton>
-      <CButton
+      </button>
+      <button
         onClick={deleteHandler}
         style={{ backgroundColor: "red", cursor: "pointer" }}
       >
         Delete
-      </CButton>
-      <CButton
+      </button>
+      <button
         onClick={updateHandler}
         style={{ backgroundColor: "green", cursor: "pointer" }}
       >
         Update
-      </CButton>
+      </button>
     </div>
   );
 };

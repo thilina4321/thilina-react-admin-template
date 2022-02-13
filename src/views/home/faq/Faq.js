@@ -1,17 +1,16 @@
 import React, { Fragment, useEffect } from "react";
-import { CButton } from "@coreui/react";
 import CardComponent from "../../../components/Card";
 import { OutsideWrapper, InsideWrapper } from "../../../components/Wrapper";
 import { useSelector, useDispatch } from "react-redux";
 import { homeFaqActions } from "../../../store/home/faq";
 
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useHttp from "../../../hooks/useHttp";
 
 const Faqs = () => {
   const dispatch = useDispatch();
   const { mountNumber, faqs } = useSelector((state) => state.homeFaq);
-  const history = useHistory();
+  const history = useNavigate();
   const getRequest = useHttp({
     url: "/home/get-faqs",
     method: "get",
@@ -38,7 +37,7 @@ const Faqs = () => {
 
   return (
     <Fragment>
-      <CButton onClick={() => createOrUpdateFaq(null)}>New Faq</CButton>
+      <button onClick={() => createOrUpdateFaq(null)}>New Faq</button>
       <OutsideWrapper>
         {faqs.map((faq) => (
           <InsideWrapper key={faq.id}>

@@ -1,13 +1,12 @@
 import React from "react";
-import { CButton } from "@coreui/react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useHttp from "../hooks/useHttp";
 
 const ButtonCreateGroupComponent = (props) => {
   const { action, backRoute, data, url } = props;
   const dispatch = useDispatch();
-  const history = useHistory();
+  const history = useNavigate();
 
   const createRequest = useHttp({
     url,
@@ -37,19 +36,19 @@ const ButtonCreateGroupComponent = (props) => {
         justifyContent: "flex-end",
       }}
     >
-      <CButton
+      <button
         onClick={cancelHandler}
         style={{ backgroundColor: "grey", cursor: "pointer" }}
       >
         Cancel
-      </CButton>
+      </button>
 
-      <CButton
+      <button
         onClick={createHandler}
         style={{ backgroundColor: "green", cursor: "pointer" }}
       >
         Create
-      </CButton>
+      </button>
     </div>
   );
 };

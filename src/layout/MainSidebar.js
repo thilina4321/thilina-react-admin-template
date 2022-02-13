@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { navigation } from "../navigator/aa-index";
+import { navigation } from "../navigation/aa-index";
 import classes from "./layout_light.module.css";
 import darkclasses from "./layout_dark.module.css";
 import { NavLink } from "react-router-dom";
@@ -57,7 +57,7 @@ const MainSidebar = (props) => {
                   gap: "0.5rem",
                 }}
               >
-                <div style={{ fontWeight: "bold" , flex:1, textAlign:'start'}}> {main.name}</div>
+                <div style={{ fontWeight: "bold" , flex:1, textAlign:'start'}}> {main}</div>
                 <div > {<ArrowDownward sx={{ fontSize: 20 }} />}</div>
               </div>
             </div>
