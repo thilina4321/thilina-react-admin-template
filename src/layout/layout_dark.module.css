@@ -4,6 +4,7 @@
   align-items: flex-start;
   width: 100%;
   border: 2px solid white;
+  margin-top: 59px;
 
 }
 
@@ -65,6 +66,13 @@
   gap: 1rem;
   justify-content: flex-start;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 39px;
+  width: 100%;
+  z-index: 5;
+  border: 2px solid white;
 }
 
 /* mobile sidebar */

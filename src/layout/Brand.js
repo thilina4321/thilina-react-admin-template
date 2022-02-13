@@ -12,7 +12,7 @@ const Mainbar = ({ setIsSide, isSide, lightTheme, setLightTheme }) => {
       <p className={classes.p}> Main Brand </p>
 
       <Switch checked={lightTheme} onClick={() => setLightTheme(!lightTheme)} />
-      <p> Logout </p>
+      <p style={{marginRight:'1rem'}}> Logout </p>
     </div>
   );
 };

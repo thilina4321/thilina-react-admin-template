@@ -3,6 +3,7 @@ import { navigation } from "../navigator/aa-index";
 import classes from "./layout_light.module.css";
 import darkclasses from "./layout_dark.module.css";
 import { NavLink } from "react-router-dom";
+import ArrowDownward from '@mui/icons-material/ExpandCircleDown'
 
 const MainSidebar = (props) => {
   const { isSide, setIsSide, isMobile = false, lightTheme } = props;
@@ -51,13 +52,13 @@ const MainSidebar = (props) => {
               <div
                 style={{
                   display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  alignItems: 'center',
                   gap: "0.5rem",
                 }}
               >
-                <div> {<main.icon sx={{ fontSize: 40 }} />}</div>
-                <div style={{ fontWeight: "bold" }}> {main.name}</div>
+                <div style={{ fontWeight: "bold" , flex:1, textAlign:'start'}}> {main.name}</div>
+                <div > {<ArrowDownward sx={{ fontSize: 20 }} />}</div>
               </div>
             </div>
             {index === isShowIndex &&
