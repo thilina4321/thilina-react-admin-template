@@ -6,7 +6,7 @@ import useHttp from "../hooks/useHttp";
 const ButtonCreateGroupComponent = (props) => {
   const { action, backRoute, data, url } = props;
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const createRequest = useHttp({
     url,
@@ -16,15 +16,17 @@ const ButtonCreateGroupComponent = (props) => {
 
   const createHandler = async () => {
     const response = await createRequest();
-    if (response) {
+    if (!response.error) {
       const data = response.data;
       dispatch(action.createValue(data));
-      history.replace(backRoute);
+      navigate(backRoute);
     }
+    navigate(backRoute);
+
   };
 
   const cancelHandler = () => {
-    history.replace(backRoute);
+    navigate(backRoute);
   };
 
   return (

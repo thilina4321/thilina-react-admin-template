@@ -37,7 +37,7 @@ const SpecificFaq = () => {
           <ButtonCreateGroupComponent
             url="/home/add-faq"
             action={homeFaqActions}
-            backRoute="/home-page/faq"
+            backRoute="/faq"
             data={{ question, answer }}
           />
         </div>
@@ -47,7 +47,7 @@ const SpecificFaq = () => {
             updateUrl="/home/update-faq"
             deleteUrl="/home/delete-faq"
             action={homeFaqActions}
-            backRoute="/home-page/faq"
+            backRoute="/faq"
             id={id}
             data={{ question, answer }}
           />

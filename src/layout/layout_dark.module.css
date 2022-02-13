@@ -4,7 +4,6 @@
   align-items: flex-start;
   width: 100%;
   border: 2px solid white;
-  margin-top: 59px;
 
 }
 
@@ -14,6 +13,7 @@
   padding: 0.5rem;
   min-height: 100vh;
   height: 100%;
+  margin-top: 59px;
 }
 
 .dark_main_element {
@@ -39,6 +39,9 @@
   background-color: var(--dark-bg-color);
   color: var(--dark-font-color);
   padding: 0.5rem;
+  margin-top: 59px;
+
+
 }
 
 .dark_sub_name {

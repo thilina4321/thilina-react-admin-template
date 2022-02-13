@@ -4,5 +4,5 @@ import SpecificFaq from '../views/home/faq/SpecificFaq'
 
 export const homeRouter = [
   { path: "/faq", element: <Faq /> },
-  { path: "faq/:id", element: <SpecificFaq /> },
+  { path: "/faq/:id", element: <SpecificFaq /> },
 ];

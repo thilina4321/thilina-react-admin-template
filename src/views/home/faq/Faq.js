@@ -10,7 +10,7 @@ import useHttp from "../../../hooks/useHttp";
 const Faqs = () => {
   const dispatch = useDispatch();
   const { mountNumber, faqs } = useSelector((state) => state.homeFaq);
-  const history = useNavigate();
+  const navigate = useNavigate();
   const getRequest = useHttp({
     url: "/home/get-faqs",
     method: "get",
@@ -32,7 +32,7 @@ const Faqs = () => {
   console.log("data");
 
   const createOrUpdateFaq = (id) => {
-    history.push(id ? `/home-page/faq/${id}` : "/home-page/faq/new-faq");
+    navigate(id ? `/faq/${id}` : "/faq/new-faq");
   };
 
   return (
