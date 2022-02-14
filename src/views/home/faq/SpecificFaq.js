@@ -25,10 +25,9 @@ const SpecificFaq = () => {
     }
   }, [mountNumber, id, faqs]);
 
-  console.log("spe");
 
   return (
-    <div>
+    <div className="full">
       <InputComponent value={question} setValue={setQuestion} name="Question" />
       <InputComponent value={answer} setValue={setAnswer} name="Answer" />
 

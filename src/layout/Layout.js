@@ -1,17 +1,20 @@
 import React, { Fragment, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Mainbar from "./Brand";
 import classes from "./layout_light.module.css";
 import darkclasses from "./layout_dark.module.css";
 import MainSidebar from "./MainSidebar";
+import Login from "../pages/Login";
 
 const Layout = (props) => {
   const [isSide, setIsSide] = useState(false);
   const [lightTheme, setLightTheme] = useState(true);
   const location = useLocation();
 
-  const names = ["/login", "/signup"];
+  const names = ["/login", "/signup", '/404'];
   const isMain = names.some((na) => na === location.pathname);
+
+  
 
   const removeSlider = () => {
     setIsSide(false);
@@ -53,7 +56,11 @@ const Layout = (props) => {
 
       <div
         className={
-          lightTheme ? classes.main_layout : darkclasses.dark_main_layout
+          !isMain
+            ? lightTheme
+              ? classes.main_layout
+              : darkclasses.dark_main_layout
+            : classes.lay
         }
       >
         {/* check is it main page before desktop slider to make

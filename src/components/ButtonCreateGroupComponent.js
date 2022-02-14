@@ -21,7 +21,7 @@ const ButtonCreateGroupComponent = (props) => {
       dispatch(action.createValue(data));
       navigate(backRoute);
     }
-    navigate(backRoute);
+          navigate(backRoute);
 
   };
 

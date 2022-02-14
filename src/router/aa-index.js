@@ -1,5 +1,15 @@
 import { oneRouter } from "./one";
 import { secondRouter } from "./two";
 import { homeRouter } from "./home";
+import Login from "../pages/Login";
+const user = JSON.parse(localStorage.getItem("user"));
 
-export const routes = [...oneRouter, ...secondRouter, ...homeRouter];
+let routes = [];
+
+if (!user) {
+  console.log("my user", user);
+  routes = [{ path: "/login", element: <Login /> }];
+} else {
+  routes = [...oneRouter, ...secondRouter, ...homeRouter];
+}
+export { routes };

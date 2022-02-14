@@ -7,6 +7,14 @@
   margin-top: 59px;
 }
 
+.lay {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 2px solid black;
+}
+
 .main_element {
   cursor: pointer;
   background-color: grey;
@@ -26,6 +34,8 @@
 
 .side {
   flex: 0.2;
+  box-shadow: 2px 2px 8px 28px rgba(0, 0, 0, 0.3);
+
 }
 
 .content {
@@ -50,8 +60,8 @@
   padding: 0.5rem;
   min-height: 100vh;
   height: 100%;
-  z-index: 20;
-  /* border: 2px solid black; */
+  /* z-index: 20; */
+  border: 2px solid black;
 }
 
 .sub_name {

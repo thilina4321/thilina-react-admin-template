@@ -11,26 +11,26 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const loginRequest = useHttp({
-    url: "/login",
+  const signRequest = useHttp({
+    url: "/users/signup",
     method: "post",
     body: { email, password },
     onSucsses: () => {},
   });
 
-  const loginHandler = async () => {
-    navigate("/");
-    return;
-    await loginRequest();
+  const signupHandler = async () => {
+    const { data } = await signRequest();
+    if (data) {
+      const user = data["user"];
+      localStorage.setItem("user", JSON.stringify(user));
+      navigate("/");
+    }
   };
 
   return (
     <div className={classes.layout}>
       <div className={classes.auth}>
-        <h1
-          style={{ cursor: "pointer" }}
-          onClick={() => navigate("/login")}
-        >
+        <h1 style={{ cursor: "pointer" }} onClick={() => navigate("/login")}>
           ALREADY HAVE AN ACCOUNT
         </h1>
 
@@ -41,7 +41,7 @@ const Login = () => {
           setValue={setPassword}
           type="password"
         />
-        <ButtonComponent name="Register" clickHandler={loginHandler} />
+        <ButtonComponent name="Register" clickHandler={signupHandler} />
       </div>
     </div>
   );

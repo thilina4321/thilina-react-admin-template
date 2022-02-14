@@ -1,14 +1,13 @@
 import axios from "axios";
 
-const useHttp = ({ url, method, body, onSucsses }) => {
+const useHttp = ({ url, method, body }) => {
   const doRequest = async () => {
     try {
       global.setIsLoading(true);
       const response = await axios[method]("http://localhost:8000" + url, body);
       global.setIsLoading(false);
 
-      onSucsses(response.data);
-      return;
+      return { data: response.data };
     } catch (err) {
       global.setIsLoading(false);
 

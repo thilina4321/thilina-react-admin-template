@@ -7,7 +7,7 @@ const First = () => {
 
   return (
     <div>
-      First
+      This is the home page
       <ImageUpload />
     </div>
   );

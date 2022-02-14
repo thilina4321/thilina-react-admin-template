@@ -11,7 +11,9 @@ const InputComponent = (props) => {
   } = props;
 
   return (
-    <div style={{ width: "100%", marginTop: "1rem", color: color }}>
+    <div
+      style={{ width: "95%", marginTop: "1rem", color: color }}
+    >
       <label style={{ margin: "10px 0" }}> {name} </label>
       {input ? (
         <input
