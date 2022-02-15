@@ -2,9 +2,18 @@ import axios from "axios";
 
 const useHttp = ({ url, method, body }) => {
   const doRequest = async () => {
+    const token = JSON.parse(localStorage.getItem("token"));
     try {
       global.setIsLoading(true);
-      const response = await axios[method]("http://localhost:8000" + url, body);
+      const response = await axios({
+        url: "http://localhost:8000" + url,
+        method,
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+        data: body,
+      });
+
       global.setIsLoading(false);
 
       return { data: response.data };

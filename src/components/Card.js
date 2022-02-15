@@ -1,18 +1,21 @@
 import React from "react";
 
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader";
 
 const CardComponent = (props) => {
-  const { question, answer } = props;
+  const { title, subTitle } = props;
 
   return (
-    <Card style={{ height: "8rem", overflow:'hidden' }}>
-      <CardContent>
-        <CardHeader>{question}</CardHeader>
-        <CardHeader>{answer}</CardHeader>
-      </CardContent>
+    <Card
+      style={{
+        height: "8rem",
+        overflow: "hidden",
+        textAlign: "center",
+        padding: "0.4rem",
+      }}
+    >
+      <h3>{title}</h3>
+      <p>{subTitle}</p>
     </Card>
   );
 };

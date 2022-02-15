@@ -11,9 +11,7 @@ const InputComponent = (props) => {
   } = props;
 
   return (
-    <div
-      style={{ width: "95%", marginTop: "1rem", color: color }}
-    >
+    <div style={{ width: "95%", marginTop: "1rem", color: color }}>
       <label style={{ margin: "10px 0" }}> {name} </label>
       {input ? (
         <input
@@ -23,6 +21,7 @@ const InputComponent = (props) => {
             height: "30px",
             paddingLeft: "10px",
             borderRadius: "5px",
+            marginTop: "5px",
           }}
           value={value}
           onChange={(e) => setValue(e.target.value)}

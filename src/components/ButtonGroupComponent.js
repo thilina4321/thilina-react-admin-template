@@ -17,23 +17,31 @@ const ButtonUpdateGroupComponent = (props) => {
   const deleteRequest = useHttp({
     url: `${deleteUrl}/${id}`,
     method: "delete",
-    body: null,
+    body: undefined,
   });
 
   const updateHandler = async () => {
-    await updateRequest();
+    const res = await updateRequest();
+    if (res.error) {
+      return;
+    }
+    const data = res.data["data"];
     dispatch(action.updateValue({ id, ...data }));
-    history.replace(backRoute);
+    history(backRoute);
   };
 
   const deleteHandler = async () => {
-    await deleteRequest();
+    const res = await deleteRequest();
+    if (res.error) {
+      return;
+    }
+
     dispatch(action.deleteValue(id));
-    history.replace(backRoute);
+    history(backRoute);
   };
 
   const cancelHandler = () => {
-    history.replace(backRoute);
+    history(backRoute);
   };
 
   return (

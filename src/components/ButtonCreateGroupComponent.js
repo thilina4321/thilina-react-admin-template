@@ -17,12 +17,9 @@ const ButtonCreateGroupComponent = (props) => {
   const createHandler = async () => {
     const response = await createRequest();
     if (!response.error) {
-      const data = response.data;
       dispatch(action.createValue(data));
       navigate(backRoute);
     }
-          navigate(backRoute);
-
   };
 
   const cancelHandler = () => {
