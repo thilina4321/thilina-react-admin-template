@@ -29,7 +29,7 @@ const SpecificYouMayLike = () => {
 
   return (
     <div className="full">
-      <InputComponent value={title} setValue={setTitle} name="Question" />
+      <InputComponent value={title} setValue={setTitle} name="Title" />
       <InputComponent value={imageUrl} setValue={setImageUrl} name="Answer" />
 
       {id && id === "new-you-may-like" ? (
