@@ -5,10 +5,32 @@ import InputComponent from "../../../components/InputComponent";
 import ButtonUpdateGroupComponent from "../../../components/ButtonGroupComponent";
 import ButtonCreateGroupComponent from "../../../components/ButtonCreateGroupComponent";
 import { useSelector } from "react-redux";
+import ImageUpload from "../../../components/ImageUpload";
+import FullComponentForModel from "../../../components/FullComponentForModel";
 
 const SpecificYouMayLike = () => {
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+
+  const [url, setUrl] = useState("");
+  const [selectImage, setSelectImage] = useState("");
+
+  // model
+  // you may know model values
+  const [youMayList, setYouMayList] = useState([]);
+  const [modelTitle, setModelTitle] = useState("");
+  const [modelDescription, setModelDescription] = useState("");
+  const [modelUrl, setModelUrl] = useState("");
+  const [selectModelImage, setSelectModelImage] = useState("");
+
+  const inputElements = [
+    { value: modelTitle, setValue: setModelTitle, name: "Title" },
+    {
+      value: modelDescription,
+      setValue: setModelDescription,
+      name: "Description",
+    },
+  ];
 
   const { id } = useParams();
   const { mountNumber, youMayLikes } = useSelector(
@@ -29,8 +51,8 @@ const SpecificYouMayLike = () => {
 
   return (
     <div className="full">
+      <ImageUpload url={url} setFile={setSelectImage} />
       <InputComponent value={title} setValue={setTitle} name="Title" />
-      <InputComponent value={imageUrl} setValue={setImageUrl} name="Answer" />
 
       {id && id === "new-you-may-like" ? (
         <div>

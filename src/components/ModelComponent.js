@@ -11,7 +11,7 @@ import {
 import InputComponent from "./InputComponent";
 import ImageUpload from "./ImageUpload";
 
-const ErrorDialog = (props) => {
+const ModelComponent = (props) => {
   const {
     inputElements = [],
     imageElements = [],
@@ -84,4 +84,4 @@ const ErrorDialog = (props) => {
   );
 };
 
-export default ErrorDialog;
+export default ModelComponent;
