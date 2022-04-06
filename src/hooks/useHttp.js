@@ -1,8 +1,10 @@
 import axios from "axios";
 
-const useHttp = ({ url, method, body }) => {
+const useHttp = ({ url, method, body, onSucsses }) => {
   const doRequest = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
+    console.log(body, 'body');
+
     try {
       global.setIsLoading(true);
       const response = await axios({
@@ -12,9 +14,11 @@ const useHttp = ({ url, method, body }) => {
           Authorization: "Bearer " + token,
         },
         data: body,
+
       });
 
       global.setIsLoading(false);
+      onSucsses(response.data);
 
       return { data: response.data };
     } catch (err) {

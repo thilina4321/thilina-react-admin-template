@@ -4,8 +4,8 @@ import {faqNavigation} from './faq'
 import {bloodNavigation} from './blood'
 
 export const navigation = [
+  faqNavigation,
   bloodNavigation,
   oneNavi,
   secNavi,
-  faqNavigation,
 ];

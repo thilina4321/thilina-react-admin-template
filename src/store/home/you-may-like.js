@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { mountNumber: 0, youMayLikes: [] };
+const initialState = {
+  mountNumber: 0,
+  youMayLikes: [],
+  title: "",
+  imageUrl: "",
+};
 
 const homeYouMayLikeSlice = createSlice({
   name: "home-page-you-may-like",
@@ -26,7 +31,9 @@ const homeYouMayLikeSlice = createSlice({
       }
     },
     deleteValue(state, action) {
-      const remaininFaqs = state.youMayLikes.filter((faq) => faq.id !== action.payload);
+      const remaininFaqs = state.youMayLikes.filter(
+        (faq) => faq.id !== action.payload
+      );
       state.youMayLikes = remaininFaqs;
     },
   },
