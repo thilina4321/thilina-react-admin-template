@@ -3,6 +3,9 @@ import CardComponent from "../../../components/Card";
 import { OutsideWrapper, InsideWrapper } from "../../../components/Wrapper";
 import { useSelector, useDispatch } from "react-redux";
 import { homeYouMayLikeActions } from "../../../store/home/you-may-like";
+import MuiInputComponent from "../../../UI/MuiInput";
+import MuiCardComponent from "../../../UI/MuiCardComponent";
+import MuiButtonComponent from "../../../UI/MuiButtonComponent";
 
 import { useNavigate } from "react-router-dom";
 import useHttp from "../../../hooks/useHttp";
@@ -11,30 +14,39 @@ import ImageUpload from "../../../components/ImageUpload";
 
 const YouMayLike = () => {
   const dispatch = useDispatch();
-  const { mountNumber, youMayLikes, title, imageUrl } = useSelector(
+  const { mountNumber, youMayLikes, imageUrl } = useSelector(
     (state) => state.homeYouMayLike
   );
   const [YouMayLikeTitle, setYouMayLikeTilte] = useState("");
   const [url, setUrl] = useState("");
+  const [title, setTitle] = useState("");
 
   const navigate = useNavigate();
+
   const getRequest = useHttp({
     url: "/you-may-like",
     method: "get",
     data: null,
-    onSucsses: (data) => dispatch(homeYouMayLikeActions.addFaqs(data)),
+    onSucsses: (res) => {
+      const { success, data } = res;
+      console.log(data);
+      if (success) {
+        const { title, imageUrl, items } = data[0];
+        setUrl(imageUrl);
+        setTitle(title);
+      }
+    },
+  });
+
+  const postSingle = useHttp({
+    url: "/you-may-like",
+    method: "post",
+    body: { title, imageUrl:url },
   });
 
   useEffect(() => {
-    const httpReq = async () => {
-      if (mountNumber === 0) {
-        await getRequest();
-      }
-      dispatch(homeYouMayLikeActions.setMountNumber(1));
-    };
-
-    httpReq();
-  }, [dispatch, getRequest, mountNumber]);
+    getRequest();
+  }, []);
 
   console.log("data", url);
 
@@ -42,18 +54,20 @@ const YouMayLike = () => {
     navigate(id ? `/you-may-like/${id}` : "/you-may-like/new-you-may-like");
   };
 
+  const singleSave = async () => {
+    console.log("hello single save");
+    postSingle();
+  };
+
   return (
     <Fragment>
-      <InputComponent
-        value={YouMayLikeTitle}
-        setValue={setYouMayLikeTilte}
-        name="Title"
+      <YouMayKnowSingleCompoent
+        title={title}
+        setTitle={setTitle}
+        url={url}
+        setUrl={setUrl}
+        clickHandler={singleSave}
       />
-
-      <ImageUpload url={url} setUrl={setUrl} />
-
-      <div style={{ height: "50px" }}></div>
-      <hr style={{ height: "5px", color: "black" }} />
 
       <YouMayLikeList
         youMayLikes={youMayLikes}
@@ -65,10 +79,24 @@ const YouMayLike = () => {
 
 export default YouMayLike;
 
+// start you may like single component
+const YouMayKnowSingleCompoent = (props) => {
+  const { title, setTitle, url, setUrl, clickHandler } = props;
+  return (
+    <MuiCardComponent title="You May Like Details">
+      <MuiInputComponent label="Title" value={title} setValue={setTitle} />
+      <ImageUpload url={url} setUrl={setUrl} />
+      <MuiButtonComponent title="Save" clickHandler={clickHandler} />
+    </MuiCardComponent>
+  );
+};
+// end you may like single component
+
+// start you may like items component
 const YouMayLikeList = (props) => {
   const { youMayLikes, createOrUpdateFaq } = props;
   return (
-    <Fragment>
+    <MuiCardComponent title="You May Like Items">
       <button onClick={() => createOrUpdateFaq(null)}>New You May Like</button>
 
       <OutsideWrapper>
@@ -83,6 +111,7 @@ const YouMayLikeList = (props) => {
           </InsideWrapper>
         ))}
       </OutsideWrapper>
-    </Fragment>
+    </MuiCardComponent>
   );
 };
+// end you may like items component

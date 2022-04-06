@@ -1,22 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const ImageUpload = (props) => {
-  const { url, setFile, setModelUrl } = props;
+  const { url, setUrl } = props;
 
   const imageRef = useRef();
   const [imageFile, setImageFile] = useState();
   const [imageUrl, setImageUrl] = useState(url ? url : "");
 
   useEffect(() => {
+    setImageUrl(url);
+  }, [url]);
+
+  useEffect(() => {
     if (imageFile) {
       const fileReader = new FileReader();
       fileReader.onload = () => {
         setImageUrl(fileReader.result);
-        setModelUrl(fileReader.result);
       };
       fileReader.readAsDataURL(imageFile);
     }
-  }, [imageFile, setModelUrl]);
+  }, [imageFile]);
 
   const inputHandler = () => {
     imageRef.current.click();
@@ -25,7 +28,7 @@ const ImageUpload = (props) => {
   const pickedImage = (event) => {
     if (event.target.files && event.target.files.length === 1) {
       setImageFile((_) => event.target.files[0]);
-      setFile((_) => event.target.files[0]);
+      setUrl((_) => event.target.files[0]);
     }
   };
 
@@ -47,15 +50,11 @@ const ImageUpload = (props) => {
           <p>Please pick a image</p>
         )}
       </div>
-      <button
-        className="image-button"
-        onClick={inputHandler}
-        type="button"
-      >
-        Pick Image
+      <button className="img-btn" onClick={inputHandler} type="button">
+        {!url ? "Pick Image" : "Change Image"}
       </button>
     </div>
-  ); 
+  );
 };
 
 export default ImageUpload;
